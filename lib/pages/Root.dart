@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import "./BisectionMethod.dart";
 import "./FalsePositionMethod.dart";
@@ -53,6 +55,10 @@ class Root extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Text(
+                    "Developed By:",
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10),
                     child: Row(
@@ -66,66 +72,48 @@ class Root extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.person,
-                        size: 25,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        "Pramesh Karki",
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
+                  Text(
+                    "Pramesh Karki",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 7,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.home,
-                        size: 25,
+                      CircleAvatar(
+                        backgroundColor: Colors.black,
+                        child: IconButton(
+                          color: Colors.white,
+                          icon: FaIcon(FontAwesomeIcons.github),
+                          onPressed: () async {
+                            final url = "https://github.com/PrameshKarki";
+                            if (await canLaunch(url)) {
+                              await launch(url, forceSafariVC: false);
+                            }
+                          },
+                        ),
                       ),
-                      SizedBox(
-                        width: 8,
+                      SizedBox(width: 10),
+                      CircleAvatar(
+                        backgroundColor: Colors.blue,
+                        child: IconButton(
+                          color: Colors.white,
+                          icon: FaIcon(FontAwesomeIcons.globeAsia),
+                          onPressed: () async {
+                            final url = "https://karkipramesh.com.np/";
+                            if (await canLaunch(url)) {
+                              await launch(
+                                url,
+                                forceSafariVC: false,
+                              );
+                            }
+                          },
+                        ),
                       ),
-                      Text(
-                        "Kathmandu,Nepal",
-                        style: TextStyle(fontSize: 18),
-                      )
                     ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.phone,
-                        size: 25,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        "+977-9842473580",
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.public,
-                        size: 25,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        "https://www.karkipramesh.com.np",
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
+                  )
                 ],
               ),
             );
@@ -138,7 +126,7 @@ class Root extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(
-              Icons.person,
+              Icons.contact_support_outlined,
               size: 30,
             ),
             onPressed: () {

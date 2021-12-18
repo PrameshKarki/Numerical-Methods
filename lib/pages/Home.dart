@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import "./BisectionMethod.dart";
 import "./FalsePositionMethod.dart";
+import "./SecantMethod.dart";
 
 class Root extends StatelessWidget {
   Widget buildGridView(BuildContext context) {
@@ -12,6 +13,7 @@ class Root extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 15,
+        mainAxisSpacing: 10,
       ),
       children: [
         InkWell(
@@ -36,6 +38,19 @@ class Root extends StatelessWidget {
             child: Center(
                 child: Text(
               "False Position Method",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline1,
+            )),
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(SecantMethod.routeName);
+          },
+          child: Card(
+            child: Center(
+                child: Text(
+              "Secant Method",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline1,
             )),

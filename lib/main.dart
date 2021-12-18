@@ -1,9 +1,10 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 
-import "./pages/Root.dart";
+import './pages/Home.dart';
 import "./pages/BisectionMethod.dart";
 import "./pages/FalsePositionMethod.dart";
+import "./pages/SecantMethod.dart";
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,7 @@ class App extends StatelessWidget {
         "/": (ctx) => Root(),
         BisectionMethod.routeName: (ctx) => BisectionMethod(),
         FalsePositionMethod.routeName: (ctx) => FalsePositionMethod(),
+        SecantMethod.routeName: (ctx) => SecantMethod(),
       },
     );
   }

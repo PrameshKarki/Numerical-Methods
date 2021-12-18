@@ -51,7 +51,7 @@ class _ResultState extends State<Result> {
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                       Text(
-                          "f(x)=${widget.data["expression"].toString().replaceAll("*", "")}"),
+                          "f(x)=${widget.data["expression"].toString()}"),
                       Text("Error(e)=${widget.data["error"]}"),
                       Text(
                           "Now, finding root interval by using tabulation method"),

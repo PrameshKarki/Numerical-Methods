@@ -54,10 +54,10 @@ class _ResultState extends State<Result> {
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
                         Text(
-                            "f(x)=${widget.data["expression"].toString().replaceAll("*", "")}"),
+                            "f(x)=${widget.data["expression"]}"),
                         Text("Error(e)=${widget.data["error"]}"),
                         Text(
-                            "Now,finding root interval by using tabulation method"),
+                            "Now, finding root interval by using tabulation method"),
                         Center(
                           child: DataTable(columns: [
                             DataColumn(
@@ -95,7 +95,7 @@ class _ResultState extends State<Result> {
                           ]),
                         ),
                         Text(
-                            "Here,the sign of f(x) changes between interval (${widget.data['pointA']},${widget.data['pointB']}).So, at least one root must lie between [${widget.data['pointA']},${widget.data['pointB']}]."),
+                            "Here, the sign of f(x) changes between interval (${widget.data['pointA']},${widget.data['pointB']}).So, at least one root must lie between [${widget.data['pointA']},${widget.data['pointB']}]."),
                         Center(
                           child: DataTable(dividerThickness: 0, columns: [
                             DataColumn(
@@ -138,7 +138,7 @@ class _ResultState extends State<Result> {
                         ),
                         Text("f(x)=f($x)=${fx.toStringAsFixed(4)}"),
                         Text(
-                            "Now,Finding sucessive approximation root using table for bisection method.We get"),
+                            "Now, Finding sucessive approximation root using table for bisection method. We get"),
                       ],
                     )),
                     DataTable(

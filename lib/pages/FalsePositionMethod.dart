@@ -90,6 +90,8 @@ class _FalsePositionMethodState extends State<FalsePositionMethod> {
 
     for (i = 0; i < 10; i++) {
       if (f(i).isNaN) continue;
+      if (f(i).isInfinite) continue;
+
       bool isFirstValueNegative = f(i) < 0 ? true : false;
       bool isSecondValueNegative = f(i + 1) < 0 ? true : false;
 

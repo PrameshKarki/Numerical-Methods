@@ -128,8 +128,7 @@ class _ResultState extends State<Result> {
                         "Now,",
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
-                      Text(
-                          "Applying formula for false position method. we get,"),
+                      Text("Applying formula for secant method. we get,"),
                       Text("x2 = (x0*f(x1)-x1*f(x0))/(f(x1)-f(x0))"),
                       Text(
                           "=(${widget.data['pointX0']} * ${fx1.toStringAsFixed(4)} - ${widget.data['pointX1']} * ${fx0.toStringAsFixed(4)})/(${fx1.toStringAsFixed(4)} - ${fx0.toStringAsFixed(4)}) "),
@@ -141,7 +140,7 @@ class _ResultState extends State<Result> {
                       Text(
                           "f(x2)=f(${fx2.toStringAsFixed(4)})=${fx2.toStringAsFixed(4)} !=0"),
                       Text(
-                          "Now, Finding sucessive approximation root using table for false position method.We get"),
+                          "Now, Finding sucessive approximation root using table for secant method.We get"),
                     ],
                   )),
                   SizedBox(

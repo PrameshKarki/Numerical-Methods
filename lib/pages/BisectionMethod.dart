@@ -1,9 +1,9 @@
 // *Import flutter packages
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
 import 'package:function_tree/function_tree.dart';
 
 import '../models/BisectionResultRow.dart';
+import '../widgets/user_input.dart';
 import '../widgets/bisection_result_view.dart';
 
 class BisectionMethod extends StatefulWidget {
@@ -162,62 +162,14 @@ class _BisectionMethodState extends State<BisectionMethod> {
       ),
       body: Column(
         children: [
-          Card(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    TextFormField(
-                      controller: expressionController,
-                      autofocus: false,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Expression*",
-                          hintText: "Note:for log(x) type:ln(x)/2.3026"),
-                      validator: expressionValidator,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    TextFormField(
-                      controller: errorController,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Error*",
-                          hintText: "0.0005"),
-                      validator: errorValidator,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 10),
-                          width: 300,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              validator(context);
-                            },
-                            child: Text("Calculate"),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              textStyle: TextStyle(fontSize: 20),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          if (resultList.length > 0) Result(resultList, data)
+           UserInput(
+              expressionController: expressionController,
+              errorController: errorController,
+              validator: validator,
+              formKey: formKey,
+              expressionValidator: expressionValidator,
+              errorValidator: errorValidator),
+          if (resultList.length > 0) Result(resultList, data),
         ],
       ),
     );

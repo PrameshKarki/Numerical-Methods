@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:numerical_methods/pages/NewtonRaphsonMethod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import "./BisectionMethod.dart";
@@ -54,6 +55,22 @@ class Root extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline1,
             )),
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(NewtonRaphsonMethod.routeName);
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Card(
+              child: Center(
+                  child: Text(
+                "Newton Raphson Method",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline1,
+              )),
+            ),
           ),
         ),
       ],

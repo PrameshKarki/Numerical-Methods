@@ -5,6 +5,7 @@ import './pages/Home.dart';
 import "./pages/BisectionMethod.dart";
 import "./pages/FalsePositionMethod.dart";
 import "./pages/SecantMethod.dart";
+import "./pages/NewtonRaphsonMethod.dart";
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,10 +38,8 @@ class App extends StatelessWidget {
         BisectionMethod.routeName: (ctx) => BisectionMethod(),
         FalsePositionMethod.routeName: (ctx) => FalsePositionMethod(),
         SecantMethod.routeName: (ctx) => SecantMethod(),
+        NewtonRaphsonMethod.routeName: (ctx) => NewtonRaphsonMethod(),
       },
     );
   }
 }
-
-
-
